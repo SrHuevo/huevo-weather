@@ -56,7 +56,7 @@ describe("weather service", function () {
                         .get(environment_1.default.openweathermap.resources.currentWeather)
                         .query({
                         appid: environment_1.default.openweathermap.API_KEY,
-                        city: city + "," + countryCode,
+                        q: city + "," + countryCode,
                     })
                         .reply(200, current_weather_mock_1.CURRENT_WEATHER_MOCK);
                     return [4 /*yield*/, weatherService.getCurrentWeatherByCity(city, countryCode)];

@@ -16,7 +16,7 @@ describe("weather service", () => {
       .get(environment.openweathermap.resources.currentWeather)
       .query({
         appid: environment.openweathermap.API_KEY,
-        city: `${city},${countryCode}`,
+        q: `${city},${countryCode}`,
       })
       .reply(200, CURRENT_WEATHER_MOCK)
 

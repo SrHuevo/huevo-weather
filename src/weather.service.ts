@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, {AxiosPromise} from 'axios'
 import {CurrentWeather} from './dto/current-weather.dto'
 import environment from './utils/environment'
 
@@ -13,10 +13,10 @@ export class WeatherService {
     this.currentWeatherResource = `${url}${environment.openweathermap.resources.currentWeather}`
   }
 
-  getCurrentWeatherByCity(city: string, countryCode?: string) {
+  getCurrentWeatherByCity(city: string, countryCode?: string): AxiosPromise<CurrentWeather> {
     const query = [city, countryCode].filter(Boolean).join()
 
-    return axios.get<CurrentWeather>(`${this.currentWeatherResource}?city=${query}&appid=${this.API_KEY}`)
+    return axios.get<CurrentWeather>(`${this.currentWeatherResource}?q=${query}&appid=${this.API_KEY}`)
   }
 
 }

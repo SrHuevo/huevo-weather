@@ -1,10 +1,11 @@
 {
   "name": "huevo-weather-model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "model for huevo-weather proyect",
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
+    "add": "git add .",
     "test": "jest"
   },
   "keywords": [
@@ -23,8 +24,10 @@
     "@types/jest": "24.0.12",
     "@types/nock": "^10.0.1",
     "nock": "10.0.6",
+    "pre-commit": "^1.2.2",
     "ts-jest": "24.0.2",
     "tslint": "5.16.0",
     "typescript": "3.4.5"
-  }
+  },
+  "pre-commit": ["compile", "add"]
 }

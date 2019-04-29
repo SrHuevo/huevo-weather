@@ -13,7 +13,7 @@ var WeatherService = /** @class */ (function () {
     }
     WeatherService.prototype.getCurrentWeatherByCity = function (city, countryCode) {
         var query = [city, countryCode].filter(Boolean).join();
-        return axios_1.default.get(this.currentWeatherResource + "?city=" + query + "&appid=" + this.API_KEY);
+        return axios_1.default.get(this.currentWeatherResource + "?q=" + query + "&appid=" + this.API_KEY);
     };
     return WeatherService;
 }());
