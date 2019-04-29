@@ -16,7 +16,7 @@ export class WeatherService {
   getCurrentWeatherByCity(city: string, countryCode?: string): AxiosPromise<CurrentWeather> {
     const query = [city, countryCode].filter(Boolean).join()
 
-    return axios.get<CurrentWeather>(`${this.currentWeatherResource}?q=${query}&appid=${this.API_KEY}`)
+    return axios.get<CurrentWeather>(`${this.currentWeatherResource}?q=${query}&appid=${this.API_KEY}&units=metric`)
   }
 
 }
