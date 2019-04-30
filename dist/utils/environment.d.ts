@@ -4,6 +4,7 @@ declare const _default: {
         url: string;
         resources: {
             currentWeather: string;
+            coordsWeather: string;
         };
     };
 };
