@@ -1,5 +1,5 @@
 import axios, {AxiosPromise} from 'axios'
-import {CurrentWeather} from './dto/current-weather.dto'
+import {CoordsWeather, CurrentWeather} from './dto/current-weather.dto'
 import environment from './utils/environment'
 
 export class WeatherService {
@@ -21,8 +21,8 @@ export class WeatherService {
     return axios.get<CurrentWeather>(`${this.currentWeatherResource}?q=${query}&appid=${this.API_KEY}&units=metric`)
   }
 
-  getCurrentWeatherByCoords(lat: number, lon: number): AxiosPromise<CurrentWeather> {
-    return axios.get<CurrentWeather>(`${this.coordsWeatherResource}?lat=${lat}&lon=${lon}&cnt=1&appid=${this.API_KEY}&units=metric`)
+  getCurrentWeatherByCoords(lat: number, lon: number): AxiosPromise<CoordsWeather> {
+    return axios.get<CoordsWeather>(`${this.coordsWeatherResource}?lat=${lat}&lon=${lon}&cnt=1&appid=${this.API_KEY}&units=metric`)
   }
 
 }

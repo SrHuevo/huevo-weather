@@ -19,3 +19,7 @@ export interface CurrentWeather {
   name: string,
   cod: number,
 }
+
+export interface CoordsWeather {
+  list: CurrentWeather[]
+}
